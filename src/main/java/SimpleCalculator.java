@@ -24,12 +24,9 @@ System.out.println("multiply= " + calculator.getMultiplicationResult());
 System.out.println("divide= " + calculator.getDivisionResult());
 
 */
-
-
 public class SimpleCalculator {
 
    // The class needs two fields (instance variables) with names firstNumber and secondNumber both of type double.
-
     public static void main(String[] args) {
 
         SimpleCalculator calculator = new SimpleCalculator();
@@ -84,7 +81,11 @@ public class SimpleCalculator {
    // Method named getDivisionResult without any parameters it needs to return the result of dividing the field values of firstNumber by the secondNumber. In case the value of secondNumber is 0 then return 0.
     public double getDivisionResult () {
         if (secondNumber == 0) {
+
             return this.secondNumber = 0;
-        } else return firstNumber / secondNumber;
+
+        }
+
+        else return firstNumber / secondNumber;
     }
 }
