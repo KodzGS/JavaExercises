@@ -64,7 +64,7 @@ public class PersonTask {
 
     /**
      * Method named getFullName without any parameters, it needs to return the full name of the person.
-     * @return empty strings if one or other is empty
+     * @return full name of the Person
      */
     public String getFullname() {
         if (firstName.isEmpty() && lastName.isEmpty()){
