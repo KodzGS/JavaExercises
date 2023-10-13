@@ -10,5 +10,7 @@ public class EntryApp {
         calculator.setSecondNumber(0);
         System.out.println("multiply= " + calculator.getMultiplicationResult());
         System.out.println("divide= " + calculator.getDivisionResult());
+
+
     }
 }
