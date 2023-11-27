@@ -16,7 +16,6 @@ public class MobilePhone {
         this.myNumber = myNumber;
         this.myContacts = new ArrayList<>();
     }
-
     /**
      * addNewContact(), has one parameter of type Contact and returns a boolean. Returns true if the contact doesn't exists,
      * or false if the contact already exists.
@@ -27,17 +26,19 @@ public class MobilePhone {
             return false;
         }
         myContacts.add(contact);
+        System.out.println("New contact: " + contact.getName()+ ", " + contact.getPhoneNumber());
         return true;
     }
-
     /**
      * updateContact(), has two parameters of type Contact (the old contact that will be updated with the new contact)
      * and returns a boolean. Returns true if the contact exists and was updated successfully, or false if the contact doesn't exists.
      */
     public boolean updateContact(Contact oldContact, Contact newContact) {
+
         if (!myContacts.contains(oldContact)) {
             myContacts.remove(oldContact);
             myContacts.add(newContact);
+            System.out.println("Update old contact: " + oldContact.getName() + " with New contact: " + newContact.getName());
             return true;
         }
         else return false;
@@ -68,17 +69,16 @@ public class MobilePhone {
     /**
      * findContact(), same as above, only it has one parameter of type String.
      */
-    public int findContact(String contactName) {
+    public int findContact(String contact) {
 
-        if (myContacts.contains(myContacts.indexOf(contactName))) {
+        if (myContacts.contains(myContacts.indexOf(contact))) {
             System.out.println("Contact found");
-            return myContacts.indexOf(contactName);
+            return myContacts.indexOf(contact);
         }
         System.out.println("Not found");
         return -1;
 
     }
-
     /**
      * queryContact(), has one parameter of type String and returns a Contact.
      * Use the String to search for the name and then return the Contact. Return null otherwise.
@@ -92,7 +92,6 @@ public class MobilePhone {
         }
         return null;
     }
-
     /**
      * printContacts(), has no parameters and doesn't return anything. Print the contacts in the following format:
      */
@@ -101,7 +100,6 @@ public class MobilePhone {
         for (Contact contact : myContacts) {
             System.out.println(contact.getName() + " -> " + contact.getPhoneNumber());
         }
-
     }
 }
 
