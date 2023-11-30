@@ -52,7 +52,7 @@ public class MobilePhone {
 
         if (myContacts.contains(contact)) {
             myContacts.remove(contact);
-            System.out.println("Contact removed successfully");
+            System.out.println("Contact removed successfully: " + contact.getName());
             return true;
         }
         System.out.println("Contact doesn't exist");
@@ -69,22 +69,32 @@ public class MobilePhone {
     /**
      * findContact(), same as above, only it has one parameter of type String.
      */
-    public int findContact(String contact) {
+    public int findContact(String contactName) {
 
-        if (myContacts.contains(myContacts.indexOf(contact))) {
+        for (Contact contact: myContacts) {
+            if (contact.getName() == contactName){
+                return myContacts.indexOf(contact);
+            }
+        }
+        System.out.println("Not found");
+        return -1;
+
+      /*  if (myContacts.contains(0)) {
             System.out.println("Contact found");
             return myContacts.indexOf(contact);
         }
         System.out.println("Not found");
         return -1;
 
+       */
+
     }
     /**
      * queryContact(), has one parameter of type String and returns a Contact.
      * Use the String to search for the name and then return the Contact. Return null otherwise.
      */
-    public Contact queryContact(String name) {
-        int position = findContact(name);
+    public Contact queryContact(String contact) {
+        int position = findContact(contact);
         if (position >= 0) {
             System.out.println("Its a match! " + position);
             return this.myContacts.get(position);
